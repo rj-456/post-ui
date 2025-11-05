@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "https://facebookapi-h52b.onrender.com/api/posts";
+const API_URL = "https://post-api-4qzj.onrender.com/api/posts";
 
 function App() {
   const [posts, setPosts] = useState([]);
