@@ -1,0 +1,225 @@
+/* === Import Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* === CSS Variables (Root) === */
+:root {
+  --facebook-blue: #1877f2;
+  --facebook-hover-blue: #166fe5;
+  --facebook-bg-gray: #f0f2f5;
+  --facebook-card-bg: #ffffff;
+  --facebook-border-light: #dadde1;
+  --facebook-text-dark: #1c1e21;
+  --facebook-text-gray: #65676b;
+  --facebook-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* === Global & Body === */
+body {
+  background: var(--facebook-bg-gray);
+  margin: 0;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  color: var(--facebook-text-dark);
+  line-height: 1.34;
+}
+
+/* === Main Container === */
+.lux-container {
+  max-width: 600px;
+  margin: 32px auto;
+  /* No background, just a layout wrapper */
+}
+
+/* === Base Card Style === */
+.lux-card {
+  background: var(--facebook-card-bg);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px var(--facebook-shadow);
+  border: 1px solid var(--facebook-border-light);
+  padding: 16px; /* Default card padding */
+}
+
+/* === Form Card === */
+.lux-form-card {
+  margin-bottom: 24px;
+  padding: 24px; /* More padding for the main form */
+}
+
+.lux-title {
+  text-align: center;
+  color: var(--facebook-blue);
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.lux-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* === Inputs & Textarea === */
+.lux-input {
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--facebook-border-light);
+  background: var(--facebook-bg-gray);
+  color: var(--facebook-text-dark);
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+}
+
+.lux-input:focus {
+  border-color: var(--facebook-blue);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--facebook-blue);
+}
+
+.lux-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* === Buttons === */
+.lux-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.lux-post-btn {
+  /* Primary button */
+  background: var(--facebook-blue);
+  color: #fff;
+  flex-grow: 1; /* Take available space */
+}
+
+.lux-post-btn:hover {
+  background: var(--facebook-hover-blue);
+}
+
+.lux-cancel-btn {
+  /* Secondary button */
+  background: var(--facebook-bg-gray);
+  color: var(--facebook-text-dark);
+  font-weight: 500;
+  border: 1px solid var(--facebook-border-light);
+}
+
+.lux-cancel-btn:hover {
+  background: #e4e6eb;
+}
+
+/* === Post Feed === */
+.lux-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Spacing between posts */
+}
+
+.lux-empty {
+  /* Uses .lux-card styles */
+  text-align: center;
+  color: var(--facebook-text-gray);
+  padding: 32px; /* More padding for empty state */
+}
+
+/* === Individual Post Card === */
+.lux-post-card {
+  /* Uses .lux-card styles with 16px padding */
+}
+
+.lux-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Post Author (Avatar + Name) */
+.lux-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lux-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--facebook-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.lux-author-name {
+  font-weight: 600;
+  color: var(--facebook-text-dark);
+}
+
+.lux-date {
+  color: var(--facebook-text-gray);
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+/* Post Content */
+.lux-post-content {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: var(--facebook-text-dark);
+  white-space: pre-wrap; /* Respects newlines in the post */
+}
+
+/* Post Image */
+.lux-post-image-wrap {
+  margin: 10px 0;
+  /* Center the image if it's smaller than the container */
+  display: flex;
+  justify-content: center;
+}
+
+.lux-post-image {
+  display: block;
+  width: 100%; /* Make image responsive */
+  max-height: 360px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--facebook-bg-gray);
+  border: 1px solid var(--facebook-border-light);
+}
+
+/* Post Actions (Edit/Delete) */
+.lux-post-actions {
+  display: flex;
+  gap: 6px;
+  border-top: 1px solid var(--facebook-border-light);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.lux-action-btn {
+  background: var(--facebook-bg-gray);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--facebook-text-dark);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.lux-action-btn:hover {
+  background: #e4e6eb;
+}
